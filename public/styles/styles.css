@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.montserrat-font{
+    font-family: "Montserrat";
+    font-weight: normal;
+    font-style: normal;
+  }
+
+.vh-90{
+    height: 90vh;
+}
+
+.fs-l{
+    font-size: 4.5rem;
+}
+
+body[data-bs-theme="dark"] .search-button{
+    display: none;
+}
+
+body[data-bs-theme="dark"] .content{
+    color: #fff !important;
+}
+
+.text-purple{
+    color: blueviolet !important;
+}
+
+.text-orange{
+    color: #fe6b37 !important;
+}
+
+.chart-container .tick line {
+    display: none;
+}

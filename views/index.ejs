@@ -1,0 +1,56 @@
+<%- include ("partials/header") %>
+<%- include("partials/navbar") %>
+
+<div class="container">
+  <div class="row vh-90 text-wrap pt-2">
+    <div class="col-xl-8 d-flex align-items-center">
+        <div class="card mb-2" style="height: 100%; width: 100%;">
+          <h3 class="d-flex justify-content-center align-items-center pt-2">
+            <%=city %> Hourly Forecast
+          </h3>
+        <div class="chart-container">
+            
+        </div>
+        <h4 class="d-flex justify-content-center align-items-center" style="text-transform: capitalize;">Feels Like : <%= feels_like %>°</h4>
+        
+    </div>
+    </div>
+    <div class="col-xl-4 d-flex align-items-center">
+      <div class="card">
+        <div class="card-body text-center">
+          <h2 class="card-title border-bottom pb-2"><%= city %></h2>
+          <img src="<%= icon %>" alt="weather-type" height="200" width="200" />
+          <h5 class="" style="text-transform: capitalize;"><%= desc %></h5>
+          <% if(currentTemp>40) { %>
+          <h1 class="card-text text-danger fs-l content"><%= currentTemp %>°</h1>
+
+          <% } if(currentTemp>30) { %>
+          <h1 class="card-text text-warning fs-l content"><%= currentTemp %>°</h1>
+
+          <% } else { %>
+          <h1 class="card-text text-dark fs-l content"><%= currentTemp %>°</h1>
+
+          <% } %>
+          <h5 class="card-text text-primary fs-5 pt-4"> <i class="fas fa-droplet"></i> <%= humidity %>%</h5>
+
+          <h5 class="card-text text-dark fs-5 pt-2 content"> <i class="fas fa-wind"></i> <%= wind %>m/s</h5>
+          <h5 class="card-text text-dark fs-5 pt-2 content"> 
+            <% if (index == 1) { %>
+            <span><i class="text-green fas fa-lungs"></span></i>
+            <% } else if (index == 2) { %>
+              <span><i class="text-warning fas fa-lungs"></span></i>
+            <% } else if (index == 3) { %>
+              <span><i class="text-orange fas fa-lungs"></span></i>
+            <% } else if (index == 4) { %>
+              <span><i class="text-danger fas fa-lungs"></span></i>
+            <% } else { %>
+              <span><i class="text-purple fas fa-lungs"></span></i>
+            <% } %>
+             <%= aqi %> </h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include("partials/footer") %>
