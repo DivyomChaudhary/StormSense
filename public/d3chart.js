@@ -56,6 +56,7 @@ fetch("/weather")
     .append("g")
     .call(d3.axisLeft(y)
     .tickFormat((d) => {
+      if(d >=14){
         if (d % 10 === 0 && d !== 0) {
             return `${d}°C`;
         } 
@@ -63,7 +64,16 @@ fetch("/weather")
         else {
             return ""; 
           }
-    }));
+    }
+  else {
+    if(d % 2 === 0 && d !== 0)
+    {
+      return `${d}°C`;
+    }
+    else{
+      return "";
+    }
+  }}));
 
     const markerData1 = dataset[4];
       const markerData2 = dataset[5]; 

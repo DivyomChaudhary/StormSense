@@ -4,21 +4,21 @@
 <div class="container">
   <div class="row vh-90 text-wrap pt-2">
     <div class="col-xl-8 d-flex align-items-center">
-        <div class="card mb-2" style="height: 100%; width: 100%;">
-          <h3 class="d-flex justify-content-center align-items-center pt-2">
+        <div class="card m-2" style="height: 100%; width: 100%;">
+          <h3 class="d-flex justify-content-center align-items-center pt-2" style="text-transform: capitalize;">
             <%=city %> Hourly Forecast
           </h3>
+          <h4 class="d-flex justify-content-center align-items-center" style="text-transform: capitalize;">Feels Like : <%= feels_like %>°</h4>
         <div class="chart-container">
             
         </div>
-        <h4 class="d-flex justify-content-center align-items-center" style="text-transform: capitalize;">Feels Like : <%= feels_like %>°</h4>
         
     </div>
     </div>
     <div class="col-xl-4 d-flex align-items-center">
       <div class="card">
         <div class="card-body text-center">
-          <h2 class="card-title border-bottom pb-2"><%= city %></h2>
+          <h2 class="card-title border-bottom pb-2" style="text-transform: capitalize;"><%= city %></h2>
           <img src="<%= icon %>" alt="weather-type" height="200" width="200" />
           <h5 class="" style="text-transform: capitalize;"><%= desc %></h5>
           <% if(currentTemp>40) { %>
@@ -31,9 +31,12 @@
           <h1 class="card-text text-dark fs-l content"><%= currentTemp %>°</h1>
 
           <% } %>
-          <h5 class="card-text text-primary fs-5 pt-4"> <i class="fas fa-droplet"></i> <%= humidity %>%</h5>
 
-          <h5 class="card-text text-dark fs-5 pt-2 content"> <i class="fas fa-wind"></i> <%= wind %>m/s</h5>
+          <h5 class="card-text fs-5 pt-4"> <i class="fas fa-temperature-full"></i> <%= max %>° / <%= min %>° </h5>
+
+          <h5 class="card-text text-primary fs-5 pt-2"> <i class="fas fa-droplet"></i> <%= humidity %>%</h5>
+
+          <h5 class="card-text fs-5 pt-2 content"> <i class="fas fa-wind  text-secondary"></i> <%= wind %>m/s</h5>
           <h5 class="card-text text-dark fs-5 pt-2 content"> 
             <% if (index == 1) { %>
             <span><i class="text-green fas fa-lungs"></span></i>

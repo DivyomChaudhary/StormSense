@@ -1,11 +1,19 @@
 <nav class="navbar sticky-top bg-body-tertiary">
-    <div class="container-fluid">
-      <a class="navbar-brand"><i class="fas fa-cloud-bolt"></i> StormSense</a>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2 border border-dark" type="text" placeholder="Enter city name" aria-label="city">
-        <% if(!desc.includes("thunderstorm")) { %>
-        <button class="btn btn-outline-dark search-button" type="submit"><i class="fas fa-magnifying-glass"></i></button>
-        <% } %>
-      </form>
-    </div>
-  </nav>
+  <div class="container-fluid">
+    <a class="navbar-brand"><i class="fas fa-cloud-bolt"></i> StormSense</a>
+    <form action="/city" method="POST" class="d-flex" role="search">
+      <input
+        class="form-control me-2 border border-dark"
+        type="text"
+        placeholder="Enter city name"
+        name="city"
+        aria-label="city"
+      />
+      <% if(!desc.includes("thunderstorm")) { %>
+      <button class="btn btn-outline-dark search-button" type="submit">
+        <i class="fas fa-magnifying-glass"></i>
+      </button>
+      <% } %>
+    </form>
+  </div>
+</nav>
