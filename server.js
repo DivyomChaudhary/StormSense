@@ -3,7 +3,7 @@ import axios from "axios";
 
 const app = express();
 const port = process.env.port || 3000;
-const API_Key = "&appid=f0c7410e1389604be33bbe3fc21621c1";
+const API_Key = "";
 const language = "&lang=en";
 let new_city = null;
 
